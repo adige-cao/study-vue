@@ -8,8 +8,10 @@
 </template>
 
 <script>
+import emitter from '@/mixins/emitter';
   export default {
     inheritAttrs: false , // 关闭特性继承
+    mixins: [emitter],
     props: {
       value: {
         type: String,
@@ -25,7 +27,7 @@
         this.$emit('input', e.target.value)
 
         // 值发生变化的时候就是需要校验的时候
-        this.$parent.$emit('validate')
+        this.dispatch("KFormItem", "validate");
       }
     },
   }
