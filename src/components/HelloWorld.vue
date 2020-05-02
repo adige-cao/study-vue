@@ -2,11 +2,12 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <!-- 组件通信 -->
-    <Communication @foo="onFoo"></Communication>
+    <!-- <Communication @foo="onFoo"></Communication> -->
     <!-- 表单 -->
     <!-- <FormExample></FormExample> -->
     <!-- 插槽 -->
     <!-- <SlotExample></SlotExample> -->
+    <Recursion></Recursion>
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import Communication from '@/components/communication';
 import FormExample from '@/components/form';
 import SlotExample from '@/components/slots';
+import Recursion from '@/components/recursion';
 
 export default {
   name: 'HelloWorld',
@@ -23,7 +25,8 @@ export default {
   components: {
     Communication,
     FormExample,
-    SlotExample
+    SlotExample,
+    Recursion
   },
   methods: {
     onFoo() {
