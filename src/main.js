@@ -4,6 +4,7 @@ import './plugins/element.js'
 import {create} from '@/utils/create'
 import Notice from '@/components/Notice'
 import router from './krouter'
+import store from './kstore'
 
 Vue.config.productionTip = false
 // 事件总线
@@ -16,5 +17,6 @@ Vue.prototype.$notice = (opts) => {
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

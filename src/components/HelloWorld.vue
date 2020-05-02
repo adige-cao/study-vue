@@ -7,7 +7,12 @@
     <!-- <FormExample></FormExample> -->
     <!-- 插槽 -->
     <!-- <SlotExample></SlotExample> -->
-    <Recursion></Recursion>
+    <!-- <Recursion></Recursion> -->
+    <!-- kvue-x -->
+    <p @click="$store.commit('add')">counter: {{$store.state.counter}}</p>
+    <p @click="$store.dispatch('add')">async counter: {{$store.state.counter}}</p>
+    <p>{{$store.getters.doubleCount}}</p>
+    <p>{{$store.getters.thirdCount}}</p>
   </div>
 </template>
 
