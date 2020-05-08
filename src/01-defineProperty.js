@@ -12,8 +12,7 @@ function defineReative(obj, key, val) {
         set(newVal) {
             if (newVal !== val) {
                 console.log('set', key);
-                console.log(newVal);
-                console.log(val);
+                // 防止newVal是对象，先做一次observe
                 val = newVal;
             }
         }
@@ -27,7 +26,12 @@ function observe(obj) {
     Object.keys(obj).forEach(key => defineReative(obj, key, obj[key]))
 }
 
+function set(obj, key, val) {
+    defineReative(obj, key, val)
+}
+
 const obj = {foo:'foo', bar: 'bar', baz: {a:1}}
 observe(obj)
 
-obj.baz.a = '10'
+set(obj, 'dong', 'dong')
+obj.dong
